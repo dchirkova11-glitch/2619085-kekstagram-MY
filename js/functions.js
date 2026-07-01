@@ -2,7 +2,7 @@
 
 const lengthString = (string, length) => string.length <= length;
 
-// console.log(lengthString('Привет', 2));
+lengthString('Привет', 2);
 
 //Задача 2
 
@@ -17,7 +17,7 @@ const isPalindrome = (string) => {
   return normalized === reversed;
 };
 
-// console.log(isPalindrome('Искать такси'));
+isPalindrome('Искать такси');
 
 //Задача 3
 const extractDigits = (string) => {
@@ -35,4 +35,4 @@ const extractDigits = (string) => {
   return parseInt(digits, 10);
 };
 
-// console.log(extractDigitsAlternative('Цена: 1500 руб.'));
+extractDigits('Цена: 1500 руб.');
