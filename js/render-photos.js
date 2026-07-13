@@ -5,11 +5,11 @@ export const renderPhotos = (photos) => {
 
   const similarListFragment = document.createDocumentFragment();
 
-  photos.forEach((picture) => {
+  photos.forEach((photo) => {
     const photosElement = similarPhotosTemplate.cloneNode(true);
-    photosElement.querySelector('.picture__img').src = picture.url;
-    photosElement.querySelector('.picture__comments').textContent = picture.comments.length;
-    photosElement.querySelector('.picture__likes').textContent = picture.likes;
+    photosElement.querySelector('.picture__img').src = photo.url;
+    photosElement.querySelector('.picture__comments').textContent = photo.comments.length;
+    photosElement.querySelector('.picture__likes').textContent = photo.likes;
     similarListFragment.appendChild(photosElement);
   });
   similarPhotosElement.appendChild(similarListFragment);
