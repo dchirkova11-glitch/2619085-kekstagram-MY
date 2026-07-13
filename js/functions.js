@@ -54,6 +54,6 @@ function isMeetingInWorkingHours(workStart, workEnd, meetingStart, duration) {
 
   return startMeetingMin >= startWorkMin && endMeetingMin <= endWorkMin;
 }
-// console.log(isMeetingInWorkingHours('08:00', '17:00', '08:30', 30));
+isMeetingInWorkingHours('08:00', '17:00', '08:30', 30);
 // console.log(isMeetingInWorkingHours('8:5', '16:00', '15:30', 45));
 // console.log(isMeetingInWorkingHours('09:00', '18:00', '09:00', 540));
