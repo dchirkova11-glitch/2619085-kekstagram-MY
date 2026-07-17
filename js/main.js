@@ -1,3 +1,5 @@
-import { getPhoto } from './data';
+import { getPhoto } from './data.js';
+import { renderPhotos } from './render-photos.js';
 
-getPhoto();
+const photosData = getPhoto();
+renderPhotos(photosData);
