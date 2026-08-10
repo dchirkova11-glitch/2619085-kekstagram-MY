@@ -14,7 +14,7 @@ const validation = new Pristine(formElement, {
 
 const checkDescription = (value) => value.length <= MAX_DESCRIPTION;
 
-const getHashtags = (text) => text.toLowerCase().split(' ').filter((item) => item.length);
+const getHashtags = (text) => text.toLowerCase().split(/\s+/);
 
 const checkHashtags = (value) => {
   if (!value.trim().length) {

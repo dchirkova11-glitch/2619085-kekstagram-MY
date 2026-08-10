@@ -1,4 +1,6 @@
 import { isValid, resetValidation } from './validation.js';
+import { resetScale } from './scale.js';
+import { resetEffects } from './effects.js';
 
 const formElement = document.querySelector('.img-upload__form');
 const modalElement = formElement.querySelector('.img-upload__overlay');
@@ -18,9 +20,13 @@ const openPreview = () => {
 const closePreview = () => {
   modalElement.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
+
   formElement.reset();
   resetValidation();
   uploadInputElement.value = '';
+  resetScale();
+  resetEffects();
+
   document.removeEventListener('keydown', onDocumentKeydown);
 };
 
