@@ -1,6 +1,14 @@
-import { getPhoto } from './data.js';
+import { getPhotos } from './api.js';
 import { renderPhotos } from './render-photos.js';
-import './upload-form.js';
+import { showDataError } from './util.js';
+import { initUploadForm } from './upload-form.js';
 
-const photosData = getPhoto();
-renderPhotos(photosData);
+getPhotos()
+  .then((photos) => {
+    renderPhotos(photos);
+  })
+  .catch(() => {
+    showDataError();
+  });
+
+initUploadForm();
