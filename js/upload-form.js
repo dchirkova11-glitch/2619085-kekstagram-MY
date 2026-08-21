@@ -3,6 +3,7 @@ import { resetScale } from './scale.js';
 import { resetEffects } from './effects.js';
 import { sendFormData } from './api.js';
 import { Messages, showMessage } from './popups.js';
+import { initLocalImageLoader } from './photos.js';
 
 const formElement = document.querySelector('.img-upload__form');
 const modalElement = formElement.querySelector('.img-upload__overlay');
@@ -43,9 +44,7 @@ function onDocumentKeydown(evt) {
 }
 
 export const initUploadForm = () => {
-  uploadInputElement.addEventListener('change', () => {
-    openPreview();
-  });
+  initLocalImageLoader(openPreview);
 
   closeFormElement.addEventListener('click', (evt) => {
     evt.preventDefault();
