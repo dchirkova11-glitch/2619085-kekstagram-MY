@@ -5,10 +5,16 @@ const similarPhotosTemplate = document.querySelector('#picture').content.querySe
 
 let localPhotos;
 
+const clear = () => {
+  document.querySelectorAll('.picture').forEach((item) => {
+    item.remove();
+  });
+};
+
 export const renderPhotos = (photos) => {
+  clear();
   localPhotos = [...photos];
   const similarListFragment = document.createDocumentFragment();
-
   photos.forEach(({ id, url, description, comments, likes }) => {
     const newPhotoElement = similarPhotosTemplate.cloneNode(true);
     const imageElement = newPhotoElement.querySelector('.picture__img');
@@ -23,7 +29,6 @@ export const renderPhotos = (photos) => {
   });
   similarPhotosElement.appendChild(similarListFragment);
 };
-
 
 similarPhotosElement.addEventListener('click', (evt) => {
   const cardElement = evt.target.closest('.picture');

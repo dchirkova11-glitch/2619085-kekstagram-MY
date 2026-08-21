@@ -61,7 +61,6 @@ effectsListElement.addEventListener('change', (evt) => {
   updateSliderOptions(currentEffectName);
 });
 
-
 export const resetEffects = () => {
   currentEffectName = 'none';
   updateSliderOptions(currentEffectName);
